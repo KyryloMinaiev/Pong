@@ -171,6 +171,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\GameInterfaceModule\GameInterface.cpp" />
+    <ClCompile Include="src\MainMenuModule\MainMenuModule.cpp" />
     <ClCompile Include="src\Pong.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -249,6 +251,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\GameInterfaceModule\GameInterface.h" />
+    <ClInclude Include="src\Interfaces\IUpdatable.h" />
+    <ClInclude Include="src\MainMenuModule\MainMenuModule.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\EnterNameScreenModule\" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
