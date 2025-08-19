@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <ostream>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 class Container;
 
@@ -9,13 +10,8 @@ class MainMenuModule
 {
 public:
     MainMenuModule();
-    void inject(Container* container);
-
-    void Test()
-    {
-        std::cout << "Test" << std::endl;
-    }
-
+    virtual ~MainMenuModule() = default;
+    void inject(Container* container, sf::RenderWindow* window);
 private:
     Container* m_container;
 };

@@ -8,6 +8,9 @@
 #include <algorithm>
 #include <typeindex>
 
+#include "IInitializable.h"
+#include "IUpdatable.h"
+
 class Container
 {
 public:
@@ -42,12 +45,22 @@ public:
     template <typename TValue>
     TValue* resolve();
 
+    void update(float deltaTime) const;
+
+    template <typename TValue, typename TType>
+    void registerObjectAsType(TValue* value);
+
+    template<typename TValue>
+    void registerObject(TValue* value);
+
 private:
     template <typename TValue>
     TValue* createInternal();
 
     template <typename TValue>
-    void injectDependencies(TValue&) { }
+    void injectDependencies(TValue&)
+    {
+    }
 
     template <typename TValue>
         requires requires(TValue t) { &TValue::inject; }
@@ -56,8 +69,17 @@ private:
     template <typename TValue, typename... Args>
     void callInject(TValue& instance, void (TValue::*test)(Args...));
 
+    template <typename TValue>
+    void addUpdatable(TValue* instance);
+
+    template <typename TValue>
+    static void addInitializable(TValue* instance);
+
+    void tryAddType(size_t typeHash, const std::string& typeName, void* value);
+
     std::vector<std::shared_ptr<void>> m_registeredTypes;
     std::map<size_t, void*> m_registeredTypesMap;
+    std::vector<IUpdatable*> m_updatables;
 };
 
 template <typename TValue>
@@ -100,18 +122,24 @@ Container::BindContainer<TValue>& Container::BindContainer<TValue>::asType()
 template <typename TValue>
 TValue* Container::registerBindContainer(BindContainer<TValue>& bind_container)
 {
-    for (auto& type : bind_container.getRegisteredTypes())
+    TValue* value = bind_container;
+
+    if (bind_container.getRegisteredTypes().empty())
     {
-        auto hash_code = type.hash_code();
-        if (m_registeredTypesMap.find(hash_code) != m_registeredTypesMap.end())
+        auto& type_id = typeid(TValue);
+        tryAddType(type_id.hash_code(), type_id.name(), value);
+    }
+    else
+    {
+        for (auto& type : bind_container.getRegisteredTypes())
         {
-            std::cout << "Type " << type.name() << " already registered!" << std::endl;
-        }
-        else
-        {
-            m_registeredTypesMap[hash_code] = bind_container;
+            auto hash_code = type.hash_code();
+            tryAddType(hash_code, type.name(), value);
         }
     }
+
+    addInitializable(value);
+    addUpdatable(value);
 
     return bind_container;
 }
@@ -137,6 +165,20 @@ TValue* Container::resolve()
     return static_cast<TValue*>(it->second);
 }
 
+template <typename TValue, typename TType>
+void Container::registerObjectAsType(TValue* value)
+{
+    auto& type_id = typeid(TType);
+    tryAddType(type_id.hash_code(), type_id.name(), value);
+}
+
+template <typename TValue>
+void Container::registerObject(TValue* value)
+{
+    auto& type_id = typeid(TValue);
+    tryAddType(type_id.hash_code(), type_id.name(), value);
+}
+
 template <typename TValue>
 TValue* Container::createInternal()
 {
@@ -156,4 +198,22 @@ template <typename TValue, typename... Args>
 void Container::callInject(TValue& instance, void (TValue::*test)(Args...))
 {
     instance.inject(resolve<std::remove_pointer_t<Args>>()...);
+}
+
+template <typename TValue>
+void Container::addUpdatable(TValue* instance)
+{
+    if (IUpdatable* updatable = dynamic_cast<IUpdatable*>(instance))
+    {
+        m_updatables.push_back(updatable);
+    }
+}
+
+template <typename TValue>
+void Container::addInitializable(TValue* instance)
+{
+    if (IInitializable* initializable = dynamic_cast<IInitializable*>(instance))
+    {
+        initializable->initialize();
+    }
 }
