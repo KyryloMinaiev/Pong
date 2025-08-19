@@ -1,5 +1,8 @@
 ﻿#pragma once
-#include "Interfaces/IUpdatable.h"
+#include <memory>
+
+#include "DIContainer/Container.h"
+#include "DIContainer/IUpdatable.h"
 
 namespace sf
 {
@@ -16,4 +19,5 @@ public:
 
 private:
     sf::RenderWindow* m_window;
+    std::unique_ptr<Container> m_container;
 };
