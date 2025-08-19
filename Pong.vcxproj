@@ -95,7 +95,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>D:\Projects\C++\Pong\external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -114,7 +114,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>D:\Projects\C++\Pong\external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,7 +135,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>D:\Projects\C++\Pong\external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -158,7 +158,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>D:\Projects\C++\Pong\external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -170,6 +170,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\DIContainer\Container.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameInterfaceModule\GameInterface.cpp" />
     <ClCompile Include="src\MainMenuModule\MainMenuModule.cpp" />
@@ -247,12 +248,18 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>D:\Projects\C++\Pong\external\include;</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdcpp20</LanguageStandard>
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">stdcpp20</LanguageStandard>
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdcpp20</LanguageStandard>
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdcpp20</LanguageStandard>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\DIContainer\Container.h" />
+    <ClInclude Include="src\DIContainer\IInitializable.h" />
+    <ClInclude Include="src\DIContainer\IUpdatable.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\GameInterfaceModule\GameInterface.h" />
-    <ClInclude Include="src\Interfaces\IUpdatable.h" />
     <ClInclude Include="src\MainMenuModule\MainMenuModule.h" />
   </ItemGroup>
   <ItemGroup>
