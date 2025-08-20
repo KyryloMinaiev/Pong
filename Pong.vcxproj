@@ -170,10 +170,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\DIContainer\Container.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameInterfaceModule\GameInterface.cpp" />
     <ClCompile Include="src\MainMenuModule\MainMenuModule.cpp" />
+    <ClCompile Include="src\Core\DIContainer\Container.cpp" />
     <ClCompile Include="src\Pong.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -255,14 +255,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\DIContainer\Container.h" />
-    <ClInclude Include="src\DIContainer\IInitializable.h" />
-    <ClInclude Include="src\DIContainer\IUpdatable.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\GameInterfaceModule\GameInterface.h" />
     <ClInclude Include="src\MainMenuModule\MainMenuModule.h" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="src\Core\" />
     <Folder Include="src\EnterNameScreenModule\" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
