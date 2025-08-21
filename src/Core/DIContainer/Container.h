@@ -9,6 +9,7 @@
 #include <typeindex>
 
 #include "IInitializable.h"
+#include "IInstaller.h"
 #include "IUpdatable.h"
 
 class Container
@@ -53,6 +54,9 @@ public:
     template<typename TValue>
     void registerObject(TValue* value);
 
+    template <typename TInstaller>
+    requires std::is_base_of_v<IInstaller<TInstaller>, TInstaller>
+    void install();
 private:
     template <typename TValue>
     TValue* createInternal();
@@ -177,6 +181,14 @@ void Container::registerObject(TValue* value)
 {
     auto& type_id = typeid(TValue);
     tryAddType(type_id.hash_code(), type_id.name(), value);
+}
+
+template <typename TInstaller>
+requires std::is_base_of_v<IInstaller<TInstaller>, TInstaller>
+void Container::install()
+{
+    TInstaller installer = TInstaller();
+    installer.install(this);
 }
 
 template <typename TValue>
