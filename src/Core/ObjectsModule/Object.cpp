@@ -8,6 +8,11 @@ void Object::setActive(bool active)
     }
 
     m_active = active;
+    for (auto& child : m_children)
+    {
+        child->setActive(active);       
+    }
+    
     if (m_active)
     {
         onEnable();
@@ -16,6 +21,25 @@ void Object::setActive(bool active)
     {
         onDisable();
     }   
+}
+
+void Object::setParent(Object* parent)
+{
+    if (m_parent)
+    {
+        std::erase(m_parent->m_children, this);       
+    }
+    
+    m_parent = parent;
+    if (m_parent)
+    {
+        m_parent->m_children.push_back(this);
+    }
+}
+
+std::vector<Object*>& Object::getChildren()
+{
+    return m_children;
 }
 
 void Object::onEnable() { }
