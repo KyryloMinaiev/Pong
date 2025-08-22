@@ -1,8 +1,8 @@
 ﻿#pragma once
 #include <memory>
 
-#include "DIContainer/Container.h"
-#include "DIContainer/IUpdatable.h"
+#include "Core/DIContainer/Container.h"
+#include "Core/DIContainer/IUpdatable.h"
 
 namespace sf
 {

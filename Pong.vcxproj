@@ -170,10 +170,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\DIContainer\Container.cpp" />
+    <ClCompile Include="src\Core\ObjectsModule\Object.cpp" />
+    <ClCompile Include="src\Core\ObjectsModule\ObjectFactory.cpp" />
+    <ClCompile Include="src\Core\ObjectsModule\ObjectsContainer.cpp" />
+    <ClCompile Include="src\Core\ObjectsModule\ObjectsModuleInstaller.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameInterfaceModule\GameInterface.cpp" />
+    <ClCompile Include="src\GlobalInstaller.cpp" />
     <ClCompile Include="src\MainMenuModule\MainMenuModule.cpp" />
+    <ClCompile Include="src\Core\DIContainer\Container.cpp" />
     <ClCompile Include="src\Pong.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -255,12 +260,18 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\DIContainer\Container.h" />
-    <ClInclude Include="src\DIContainer\IInitializable.h" />
-    <ClInclude Include="src\DIContainer\IUpdatable.h" />
+    <ClInclude Include="src\Core\DIContainer\IInstaller.h" />
+    <ClInclude Include="src\Core\ObjectsModule\Object.h" />
+    <ClInclude Include="src\Core\ObjectsModule\ObjectFactory.h" />
+    <ClInclude Include="src\Core\ObjectsModule\ObjectsContainer.h" />
+    <ClInclude Include="src\Core\ObjectsModule\ObjectsModuleInstaller.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\GameInterfaceModule\GameInterface.h" />
+    <ClInclude Include="src\GlobalInstaller.h" />
     <ClInclude Include="src\MainMenuModule\MainMenuModule.h" />
+    <ClInclude Include="src\Core\DIContainer\Container.h" />
+    <ClInclude Include="src\Core\DIContainer\IInitializable.h" />
+    <ClInclude Include="src\Core\DIContainer\IUpdatable.h" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\EnterNameScreenModule\" />
