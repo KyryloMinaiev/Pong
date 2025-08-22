@@ -8,6 +8,8 @@ void ObjectsModuleInstaller::install(Container* container)
 {
     container->bind<ObjectsContainer>().registerType();
     container->bind<ObjectFactory>().registerType();
+
+    container->setupObjectsFactory(container->resolve<ObjectFactory>());
 }
 
 ObjectsModuleInstaller::~ObjectsModuleInstaller() = default;

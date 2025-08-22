@@ -11,6 +11,9 @@
 #include "IInitializable.h"
 #include "IInstaller.h"
 #include "IUpdatable.h"
+#include "../ObjectsModule/ObjectFactory.h"
+
+class Object;
 
 class Container
 {
@@ -36,6 +39,7 @@ public:
     };
 
     Container();
+    void setupObjectsFactory(ObjectFactory* factory);
 
     template <typename TValue>
     TValue* registerBindContainer(BindContainer<TValue>& bind_container);
@@ -57,6 +61,10 @@ public:
     template <typename TInstaller>
     requires std::is_base_of_v<IInstaller<TInstaller>, TInstaller>
     void install();
+
+    template <typename TObject>
+    requires std::is_base_of_v<TObject, Object>
+    TObject* instantiate(const std::string& name);
 private:
     template <typename TValue>
     TValue* createInternal();
@@ -84,6 +92,8 @@ private:
     std::vector<std::shared_ptr<void>> m_registeredTypes;
     std::map<size_t, void*> m_registeredTypesMap;
     std::vector<IUpdatable*> m_updatables;
+
+    ObjectFactory* m_objectFactory;
 };
 
 template <typename TValue>
@@ -189,6 +199,14 @@ void Container::install()
 {
     TInstaller installer = TInstaller();
     installer.install(this);
+}
+
+template <typename TObject> requires std::is_base_of_v<TObject, Object>
+TObject* Container::instantiate(const std::string& name)
+{
+    TObject* object = m_objectFactory->createObjectOfType<TObject>(name);
+    injectDependencies(*object);
+    return object;
 }
 
 template <typename TValue>
