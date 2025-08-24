@@ -60,6 +60,11 @@ void Text::setOutline(const sf::Color& outline, unsigned int outlineThickness) c
     m_text->setOutlineThickness(outlineThickness);
 }
 
+sf::FloatRect Text::getGlobalBounds() const
+{
+    return m_text->getGlobalBounds();
+}
+
 sf::Transformable* Text::getTransformable()
 {
     return m_text.get();

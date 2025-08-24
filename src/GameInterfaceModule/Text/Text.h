@@ -24,6 +24,7 @@ public:
     void setStyle(unsigned int style) const;
     void setOutline(const sf::Color& outline, unsigned int outlineThickness) const;
 
+    [[nodiscard]] sf::FloatRect getGlobalBounds() const;
 protected:
     sf::Transformable* getTransformable() override;
 
