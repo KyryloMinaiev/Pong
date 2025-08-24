@@ -1,5 +1,7 @@
 ﻿#include "Text.h"
 
+#include <SFML/Graphics/Font.hpp>
+
 void Text::setup(const std::string& text, unsigned int size, const sf::Color& color, unsigned int style,
                  const sf::Color& outline, unsigned int outlineThickness) const
 {
@@ -16,13 +18,14 @@ void Text::setup(const TextSettings& settings) const
           settings.style, settings.outline, settings.outlineThickness);
 }
 
-void Text::setupFont(const sf::Font* font)
+Text::Text()
 {
-    if (!m_text)
-    {
-        m_text = std::make_unique<sf::Text>(*font);
-    }
+    sf::Font font;
+    m_text = std::make_unique<sf::Text>(font); 
+}
 
+void Text::setupFont(const sf::Font* font) const
+{
     m_text->setFont(*font);
 }
 
@@ -55,4 +58,9 @@ void Text::setOutline(const sf::Color& outline, unsigned int outlineThickness) c
 {
     m_text->setOutlineColor(outline);
     m_text->setOutlineThickness(outlineThickness);
+}
+
+sf::Transformable* Text::getTransformable()
+{
+    return m_text.get();
 }
