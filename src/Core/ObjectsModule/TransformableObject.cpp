@@ -1,66 +1,68 @@
 ﻿#include "TransformableObject.h"
 
-TransformableObject::TransformableObject() : m_transformable(std::make_unique<sf::Transformable>()), m_transformablePtr(m_transformable.get())
-{
-}
-
-TransformableObject::TransformableObject(sf::Transformable* transformable) : m_transformablePtr(transformable)
-{
-}
-
 TransformableObject::~TransformableObject() = default;
 
-void TransformableObject::setPosition(sf::Vector2f position) const
+void TransformableObject::setPosition(sf::Vector2f position)
 {
-    m_transformablePtr->setPosition(position);  
+    getTransformable()->setPosition(position);  
 }
 
-void TransformableObject::setRotation(sf::Angle angle) const
+void TransformableObject::setRotation(sf::Angle angle)
 {
-    m_transformablePtr->setRotation(angle); 
+    getTransformable()->setRotation(angle); 
 }
 
-void TransformableObject::setScale(sf::Vector2f scale) const
+void TransformableObject::setScale(sf::Vector2f scale)
 {
-    m_transformablePtr->setScale(scale);
+    getTransformable()->setScale(scale);
 }
 
-void TransformableObject::setOrigin(sf::Vector2f origin) const
+void TransformableObject::setOrigin(sf::Vector2f origin)
 {
-    m_transformablePtr->setOrigin(origin);
+    getTransformable()->setOrigin(origin);
 }
 
-sf::Vector2f TransformableObject::getPosition() const
+sf::Vector2f TransformableObject::getPosition()
 {
-    return m_transformablePtr->getPosition(); 
+    return getTransformable()->getPosition(); 
 }
 
-sf::Angle TransformableObject::getRotation() const
+sf::Angle TransformableObject::getRotation()
 {
-    return m_transformablePtr->getRotation();
+    return getTransformable()->getRotation();
 }
 
-sf::Vector2f TransformableObject::getScale() const
+sf::Vector2f TransformableObject::getScale()
 {
-    return m_transformablePtr->getScale();
+    return getTransformable()->getScale();
 }
 
-sf::Vector2f TransformableObject::getOrigin() const
+sf::Vector2f TransformableObject::getOrigin()
 {
-    return m_transformablePtr->getOrigin();
+    return getTransformable()->getOrigin();
 }
 
-void TransformableObject::move(sf::Vector2f offset) const
+void TransformableObject::move(sf::Vector2f offset)
 {
-    m_transformablePtr->move(offset);
+    getTransformable()->move(offset);
 }
 
-void TransformableObject::rotate(sf::Angle angle) const
+void TransformableObject::rotate(sf::Angle angle)
 {
-    m_transformablePtr->rotate(angle);
+    getTransformable()->rotate(angle);
 }
 
-void TransformableObject::scale(sf::Vector2f factor) const
+void TransformableObject::scale(sf::Vector2f factor)
 {
-    m_transformablePtr->scale(factor);
+    getTransformable()->scale(factor);
+}
+
+sf::Transformable* TransformableObject::getTransformable()
+{
+    if (!m_transformable)
+    {
+        m_transformable = std::make_unique<sf::Transformable>();
+    }
+
+    return m_transformable.get();
 }
