@@ -37,6 +37,11 @@ void Object::setParent(Object* parent)
     }
 }
 
+bool Object::isActive() const
+{
+    return m_active;
+}
+
 std::vector<Object*>& Object::getChildren()
 {
     return m_children;

@@ -9,6 +9,7 @@ public:
 
     void setActive(bool active);
     void setParent(Object* parent);
+    bool isActive() const;
 
     std::vector<Object*>& getChildren();
     

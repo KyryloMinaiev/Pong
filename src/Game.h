@@ -4,6 +4,8 @@
 #include "Core/DIContainer/Container.h"
 #include "Core/DIContainer/IUpdatable.h"
 
+class GameInterface;
+
 namespace sf
 {
     class RenderWindow;
@@ -20,4 +22,5 @@ public:
 private:
     sf::RenderWindow* m_window;
     std::unique_ptr<Container> m_container;
+    GameInterface* m_gameInterface;
 };
