@@ -9,7 +9,7 @@ template <typename Tout, typename... Args>
 class Delegate<Tout(Args...)>
 {
 public:
-    Delegate() = default;
+    Delegate() : m_owner(nullptr), m_method(nullptr){};
 
     template <class T>
     Delegate(T* instance, Tout (T::*method)(Args...))

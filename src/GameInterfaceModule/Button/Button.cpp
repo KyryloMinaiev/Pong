@@ -1,7 +1,5 @@
 ﻿#include "Button.h"
 
-#include <algorithm>
-
 void Button::update(float deltaTime)
 {
     
@@ -9,10 +7,7 @@ void Button::update(float deltaTime)
 
 void Button::executeOnClickListeners() const
 {
-    for (auto& listener : m_onClickListeners)
-    {
-        listener();
-    }  
+    m_onClickListeners.invoke();
 }
 
 void Button::setup(const ButtonSettings& buttonSettings)
@@ -23,15 +18,12 @@ void Button::setup(const ButtonSettings& buttonSettings)
 
 void Button::addOnClickListener(const Action<>& listener)
 {
-    m_onClickListeners.push_back(listener);
+    m_onClickListeners.addListener(listener);
 }
 
 void Button::removeOnClickListener(const Action<>& listener)
 {
-    auto it = std::find(m_onClickListeners.begin(), m_onClickListeners.end(), listener);
-    if (it != m_onClickListeners.end()) {
-        m_onClickListeners.erase(it);
-    }
+    m_onClickListeners.removeListener(listener);
 }
 
 void Button::beginInteraction()

@@ -1,12 +1,9 @@
 ﻿#pragma once
 
-#include <functional>
-#include <set>
-
-#include "../../Core/Delegates/Action.h"
 #include "ButtonSettings.h"
 #include "../IFocusable.h"
 #include "../IInteractable.h"
+#include "../../Core/Delegates/Event.h"
 #include "../../Core/DIContainer/IUpdatable.h"
 #include "../Image/Image.h"
 
@@ -30,6 +27,6 @@ public:
 private:
     void executeOnClickListeners() const;
     
-    std::vector<Action<>> m_onClickListeners;
+    Event<> m_onClickListeners;
     ButtonSettings m_buttonSettings;
 };
