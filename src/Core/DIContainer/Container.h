@@ -27,7 +27,7 @@ public:
         std::vector<std::type_index> getRegisteredTypes();
         operator TValue*();
 
-        void registerType();
+        TValue* registerType();
 
         template <typename TType>
         BindContainer& asType();
@@ -63,7 +63,7 @@ public:
     void install();
 
     template <typename TObject>
-    requires std::is_base_of_v<TObject, Object>
+    requires std::is_base_of_v<Object, TObject>
     TObject* instantiate(const std::string& name);
 private:
     template <typename TValue>
@@ -105,7 +105,7 @@ Container::BindContainer<TValue>::BindContainer(TValue* value, Container* contai
 template <typename TValue>
 std::vector<std::type_index> Container::BindContainer<TValue>::getRegisteredTypes()
 {
-    return std::move(m_registeredTypes);
+    return m_registeredTypes;
 }
 
 template <typename TValue>
@@ -115,9 +115,10 @@ Container::BindContainer<TValue>::operator TValue*()
 }
 
 template <typename TValue>
-void Container::BindContainer<TValue>::registerType()
+TValue* Container::BindContainer<TValue>::registerType()
 {
     m_container->registerBindContainer(*this);
+    return m_value;  
 }
 
 template <typename TValue>
@@ -201,7 +202,7 @@ void Container::install()
     installer.install(this);
 }
 
-template <typename TObject> requires std::is_base_of_v<TObject, Object>
+template <typename TObject> requires std::is_base_of_v<Object, TObject>
 TObject* Container::instantiate(const std::string& name)
 {
     TObject* object = m_objectFactory->createObjectOfType<TObject>(name);
