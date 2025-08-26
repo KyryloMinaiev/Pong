@@ -4,6 +4,6 @@ class IFocusable
 {
 public:
     virtual ~IFocusable() = default;
-    void focus();
-    void unfocus();
+    virtual void focus() = 0;
+    virtual void unfocus() = 0;
 };

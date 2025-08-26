@@ -4,5 +4,6 @@ class IInteractable
 {
 public:
     virtual ~IInteractable() = default;
-    virtual void interact() = 0;
+    virtual void beginInteraction() = 0;
+    virtual void endInteraction() = 0;
 };
