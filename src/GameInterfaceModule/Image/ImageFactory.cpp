@@ -10,17 +10,15 @@ void ImageFactory::inject(GameInterface* gameInterface, ITextureContainer* textu
     m_textureContainer = textureContainer; 
 }
 
-Image* ImageFactory::createImage(sf::Texture* texture)
+Image* ImageFactory::createImage(sf::Texture* texture, const std::string& name)
 {
-    Image* image = m_gameInterface->createUIObjectOfType<Image>();
+    Image* image = m_gameInterface->createUIObjectOfType<Image>(name);
     image->setTexture(texture);
     return image;
 }
 
-Image* ImageFactory::createImage(const std::filesystem::path& filename)
+Image* ImageFactory::createImage(const std::filesystem::path& filename, const std::string& name)
 {
-    Image* image = m_gameInterface->createUIObjectOfType<Image>();
     sf::Texture* texture = m_textureContainer->getTexture(filename);
-    image->setTexture(texture);
-    return image;
+    return createImage(texture, name);
 }

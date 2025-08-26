@@ -9,8 +9,8 @@ class ImageFactory : public IImageFactory
 public:
     ~ImageFactory() override;
     void inject(GameInterface* gameInterface, ITextureContainer* textureContainer);
-    Image* createImage(sf::Texture* texture) override;
-    Image* createImage(const std::filesystem::path& filename) override;
+    Image* createImage(sf::Texture* texture, const std::string& name = "Image") override;
+    Image* createImage(const std::filesystem::path& filename, const std::string& name = "Image") override;
 
 private:
     GameInterface* m_gameInterface;
