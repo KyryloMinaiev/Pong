@@ -178,7 +178,6 @@
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameInterfaceModule\Button\Button.cpp" />
     <ClCompile Include="src\GameInterfaceModule\Button\ButtonFactory.cpp" />
-    <ClCompile Include="src\GameInterfaceModule\FocusableUIObject.cpp" />
     <ClCompile Include="src\GameInterfaceModule\FontsProvider.cpp" />
     <ClCompile Include="src\GameInterfaceModule\GameInterface.cpp" />
     <ClCompile Include="src\GameInterfaceModule\GameInterfaceModuleInstaller.cpp" />
@@ -194,6 +193,8 @@
     <ClCompile Include="src\Pong.cpp" />
     <ClCompile Include="src\RenderModule\IRenderable.cpp" />
     <ClCompile Include="src\TextureContainer.cpp" />
+    <ClCompile Include="src\WindowEvents\WindowEventHandler.cpp" />
+    <ClCompile Include="src\WindowSequenceService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Delegates\Action.h" />
@@ -212,7 +213,6 @@
     <ClInclude Include="src\GameInterfaceModule\Button\ButtonFactory.h" />
     <ClInclude Include="src\GameInterfaceModule\Button\ButtonSettings.h" />
     <ClInclude Include="src\GameInterfaceModule\Button\IButtonFactory.h" />
-    <ClInclude Include="src\GameInterfaceModule\FocusableUIObject.h" />
     <ClInclude Include="src\GameInterfaceModule\FontsProvider.h" />
     <ClInclude Include="src\GameInterfaceModule\GameInterface.h" />
     <ClInclude Include="src\GameInterfaceModule\GameInterfaceModuleInstaller.h" />
@@ -235,6 +235,8 @@
     <ClInclude Include="src\Core\DIContainer\IUpdatable.h" />
     <ClInclude Include="src\RenderModule\IRenderable.h" />
     <ClInclude Include="src\TextureContainer.h" />
+    <ClInclude Include="src\WindowEvents\WindowEventHandler.h" />
+    <ClInclude Include="src\WindowSequenceService.h" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\EnterNameScreenModule\" />
