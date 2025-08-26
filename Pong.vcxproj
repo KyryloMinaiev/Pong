@@ -176,9 +176,14 @@
     <ClCompile Include="src\DebugModule\DebugModuleInstaller.cpp" />
     <ClCompile Include="src\DebugModule\FPSCounter.cpp" />
     <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\GameInterfaceModule\Button\Button.cpp" />
+    <ClCompile Include="src\GameInterfaceModule\Button\ButtonFactory.cpp" />
+    <ClCompile Include="src\GameInterfaceModule\FocusableUIObject.cpp" />
     <ClCompile Include="src\GameInterfaceModule\FontsProvider.cpp" />
     <ClCompile Include="src\GameInterfaceModule\GameInterface.cpp" />
     <ClCompile Include="src\GameInterfaceModule\GameInterfaceModuleInstaller.cpp" />
+    <ClCompile Include="src\GameInterfaceModule\Image\Image.cpp" />
+    <ClCompile Include="src\GameInterfaceModule\Image\ImageFactory.cpp" />
     <ClCompile Include="src\GameInterfaceModule\Text\Text.cpp" />
     <ClCompile Include="src\GameInterfaceModule\Text\TextFactory.cpp" />
     <ClCompile Include="src\GameInterfaceModule\Text\TextSettings.cpp" />
@@ -188,8 +193,12 @@
     <ClCompile Include="src\Core\DIContainer\Container.cpp" />
     <ClCompile Include="src\Pong.cpp" />
     <ClCompile Include="src\RenderModule\IRenderable.cpp" />
+    <ClCompile Include="src\TextureContainer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Core\Delegates\Action.h" />
+    <ClInclude Include="src\Core\Delegates\Delegate.h" />
+    <ClInclude Include="src\Core\Delegates\Event.h" />
     <ClInclude Include="src\Core\DIContainer\IInstaller.h" />
     <ClInclude Include="src\Core\ObjectsModule\Object.h" />
     <ClInclude Include="src\Core\ObjectsModule\ObjectFactory.h" />
@@ -199,23 +208,33 @@
     <ClInclude Include="src\DebugModule\DebugModuleInstaller.h" />
     <ClInclude Include="src\DebugModule\FPSCounter.h" />
     <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\GameInterfaceModule\Button\Button.h" />
+    <ClInclude Include="src\GameInterfaceModule\Button\ButtonFactory.h" />
+    <ClInclude Include="src\GameInterfaceModule\Button\ButtonSettings.h" />
+    <ClInclude Include="src\GameInterfaceModule\Button\IButtonFactory.h" />
+    <ClInclude Include="src\GameInterfaceModule\FocusableUIObject.h" />
     <ClInclude Include="src\GameInterfaceModule\FontsProvider.h" />
     <ClInclude Include="src\GameInterfaceModule\GameInterface.h" />
     <ClInclude Include="src\GameInterfaceModule\GameInterfaceModuleInstaller.h" />
     <ClInclude Include="src\GameInterfaceModule\IFocusable.h" />
     <ClInclude Include="src\GameInterfaceModule\IFontsProvider.h" />
     <ClInclude Include="src\GameInterfaceModule\IInteractable.h" />
+    <ClInclude Include="src\GameInterfaceModule\Image\IImageFactory.h" />
+    <ClInclude Include="src\GameInterfaceModule\Image\Image.h" />
+    <ClInclude Include="src\GameInterfaceModule\Image\ImageFactory.h" />
     <ClInclude Include="src\GameInterfaceModule\Text\ITextFactory.h" />
     <ClInclude Include="src\GameInterfaceModule\Text\Text.h" />
     <ClInclude Include="src\GameInterfaceModule\Text\TextFactory.h" />
     <ClInclude Include="src\GameInterfaceModule\Text\TextSettings.h" />
     <ClInclude Include="src\GameInterfaceModule\UIObject.h" />
     <ClInclude Include="src\GlobalInstaller.h" />
+    <ClInclude Include="src\ITextureContainer.h" />
     <ClInclude Include="src\MainMenuModule\MainMenuModule.h" />
     <ClInclude Include="src\Core\DIContainer\Container.h" />
     <ClInclude Include="src\Core\DIContainer\IInitializable.h" />
     <ClInclude Include="src\Core\DIContainer\IUpdatable.h" />
     <ClInclude Include="src\RenderModule\IRenderable.h" />
+    <ClInclude Include="src\TextureContainer.h" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\EnterNameScreenModule\" />
