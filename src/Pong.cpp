@@ -16,14 +16,6 @@ int WinMain()
         float deltaTime = clock.restart().asSeconds();
         game->update(deltaTime);
         window.display();
-
-        while (const std::optional event = window.pollEvent())
-        {
-            if (event->is<sf::Event::Closed>())
-            {
-                window.close();
-            }
-        }
     }
     
     return 0;

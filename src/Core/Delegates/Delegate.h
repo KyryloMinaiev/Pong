@@ -21,7 +21,7 @@ public:
     void Bind(T* instance, Tout (T::*method)(Args...))
     {
         m_owner = instance;
-        m_method = method;
+        m_method = &method;
         
         m_function = [instance, method](Args... args) -> Tout
         {
