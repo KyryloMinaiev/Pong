@@ -7,6 +7,7 @@
 class WindowSequenceService : public IInitializable
 {
 public:
+    WindowSequenceService();
     ~WindowSequenceService() override;
     void inject(sf::RenderWindow* window, WindowEventHandler* windowEventHandler);
     void initialize() override;
@@ -16,4 +17,6 @@ private:
     
     sf::RenderWindow* m_window;
     WindowEventHandler* m_windowEventHandler;
+
+    Action<const sf::Event::Closed*> m_windowClosedAction;
 };

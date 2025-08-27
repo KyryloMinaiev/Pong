@@ -1,6 +1,14 @@
 ﻿#include "WindowSequenceService.h"
 
-WindowSequenceService::~WindowSequenceService() = default;
+WindowSequenceService::WindowSequenceService()
+{
+    m_windowClosedAction = CreateAction(this, &WindowSequenceService::onWindowClosedEvent);
+}
+
+WindowSequenceService::~WindowSequenceService()
+{
+    m_windowEventHandler->removeEventListener(m_windowClosedAction); 
+}
 
 void WindowSequenceService::inject(sf::RenderWindow* window, WindowEventHandler* windowEventHandler)
 {
@@ -10,7 +18,7 @@ void WindowSequenceService::inject(sf::RenderWindow* window, WindowEventHandler*
 
 void WindowSequenceService::initialize()
 {
-    m_windowEventHandler->addEventListener(CreateAction(this, &WindowSequenceService::onWindowClosedEvent));
+    m_windowEventHandler->addEventListener(m_windowClosedAction);
 }
 
 void WindowSequenceService::onWindowClosedEvent(const sf::Event::Closed* closedEvent)
