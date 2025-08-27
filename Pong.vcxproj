@@ -188,10 +188,10 @@
     <ClCompile Include="src\GameInterfaceModule\Text\TextSettings.cpp" />
     <ClCompile Include="src\GameInterfaceModule\UIObject.cpp" />
     <ClCompile Include="src\GlobalInstaller.cpp" />
+    <ClCompile Include="src\InputModule\InputManager.cpp" />
     <ClCompile Include="src\MainMenuModule\MainMenuModule.cpp" />
     <ClCompile Include="src\Core\DIContainer\Container.cpp" />
     <ClCompile Include="src\Pong.cpp" />
-    <ClCompile Include="src\RenderModule\IRenderable.cpp" />
     <ClCompile Include="src\TextureContainer.cpp" />
     <ClCompile Include="src\WindowEvents\WindowEventHandler.cpp" />
     <ClCompile Include="src\WindowSequenceService.cpp" />
@@ -228,6 +228,8 @@
     <ClInclude Include="src\GameInterfaceModule\Text\TextSettings.h" />
     <ClInclude Include="src\GameInterfaceModule\UIObject.h" />
     <ClInclude Include="src\GlobalInstaller.h" />
+    <ClInclude Include="src\InputModule\IInputManager.h" />
+    <ClInclude Include="src\InputModule\InputManager.h" />
     <ClInclude Include="src\ITextureContainer.h" />
     <ClInclude Include="src\MainMenuModule\MainMenuModule.h" />
     <ClInclude Include="src\Core\DIContainer\Container.h" />

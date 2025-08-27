@@ -14,9 +14,9 @@ public:
     void inject(sf::RenderWindow* window);
     
     template<typename TEvent>
-    void addEventListener(Action<const TEvent*> listener);
+    void addEventListener(const Action<const TEvent*>& listener);
     template<typename TEvent>
-    void removeEventListener(Action<const TEvent*> listener);
+    void removeEventListener(const Action<const TEvent*>& listener);
 
     void update(float deltaTime) override;
 private:
@@ -30,7 +30,7 @@ private:
 };
 
 template <typename TEvent>
-void WindowEventHandler::addEventListener(Action<const TEvent*> listener)
+void WindowEventHandler::addEventListener(const Action<const TEvent*>& listener)
 {
     std::type_index index = typeid(TEvent);
     if (!m_eventHandlers.contains(index))
@@ -48,7 +48,7 @@ void WindowEventHandler::addEventListener(Action<const TEvent*> listener)
 }
 
 template <typename TEvent>
-void WindowEventHandler::removeEventListener(Action<const TEvent*> listener)
+void WindowEventHandler::removeEventListener(const Action<const TEvent*>& listener)
 {
     std::type_index index = typeid(TEvent);
     if (!m_eventListenersMap.contains(index))
