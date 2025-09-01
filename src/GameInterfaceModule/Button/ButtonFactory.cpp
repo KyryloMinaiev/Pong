@@ -7,11 +7,13 @@
 
 ButtonFactory::~ButtonFactory() = default;
 
-void ButtonFactory::inject(GameInterface* gameInterface, ITextureContainer* textureContainer, ITextFactory* textFactory)
+void ButtonFactory::inject(GameInterface* gameInterface, ObjectsContainer* objectsContainer, ITextureContainer* textureContainer, ITextFactory*
+                           textFactory)
 {
     m_gameInterface = gameInterface;
     m_textureContainer = textureContainer;
     m_textFactory = textFactory;
+    m_objectsContainer = objectsContainer;
 }
 
 Button* ButtonFactory::createButton(sf::Texture* texture, const std::string& text, const std::string& name)
@@ -22,7 +24,7 @@ Button* ButtonFactory::createButton(sf::Texture* texture, const std::string& tex
     {
         Text* textObject = m_textFactory->createText();
         textObject->setText(text);
-        textObject->setParent(button);
+        m_objectsContainer->setObjectParent(button, textObject);
     }
     
     return button;  
