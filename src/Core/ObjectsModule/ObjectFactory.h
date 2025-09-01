@@ -16,27 +16,17 @@ public:
 
     template<typename TObject>
     requires std::is_base_of_v<Object, TObject>
-    TObject* createObjectOfType();
-
-    template<typename TObject>
-    requires std::is_base_of_v<Object, TObject>
-    TObject* createObjectOfType(const std::string& name);
+    TObject* createObjectOfType(const std::string& name = "New Object", bool active = true);
 private:
-    ObjectsContainer* m_objects_container;
+    ObjectsContainer* m_objectsContainer;
 };
 
 template <typename TObject> requires std::is_base_of_v<Object, TObject>
-TObject* ObjectFactory::createObjectOfType()
-{
-    return createObjectOfType<TObject>("New Object");   
-}
-
-template <typename TObject> requires std::is_base_of_v<Object, TObject>
-TObject* ObjectFactory::createObjectOfType(const std::string& name)
+TObject* ObjectFactory::createObjectOfType(const std::string& name, bool active)
 {
     auto object_ptr = std::make_shared<TObject>();
+    m_objectsContainer->addObject(object_ptr);
     object_ptr->name = name;
-    object_ptr->setActive(true);
-    m_objects_container->addObject(object_ptr);
+    m_objectsContainer->setObjectActive(object_ptr.get(), active); 
     return object_ptr.get();  
 }

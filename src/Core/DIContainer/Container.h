@@ -64,7 +64,7 @@ public:
 
     template <typename TObject>
     requires std::is_base_of_v<Object, TObject>
-    TObject* instantiate(const std::string& name);
+    TObject* instantiate(const std::string& name = std::string(), bool active = true);
 private:
     template <typename TValue>
     TValue* createInternal();
@@ -203,9 +203,9 @@ void Container::install()
 }
 
 template <typename TObject> requires std::is_base_of_v<Object, TObject>
-TObject* Container::instantiate(const std::string& name)
+TObject* Container::instantiate(const std::string& name, bool active)
 {
-    TObject* object = m_objectFactory->createObjectOfType<TObject>(name);
+    TObject* object = m_objectFactory->createObjectOfType<TObject>(name, active);
     injectDependencies(*object);
     return object;
 }
