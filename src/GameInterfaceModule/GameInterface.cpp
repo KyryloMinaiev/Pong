@@ -1,18 +1,34 @@
 ﻿#include "GameInterface.h"
 
-void GameInterface::inject(sf::RenderWindow* window, Container* container)
+GameInterface::GameInterface()
+{
+    m_objectActiveAction = CreateAction(this, &GameInterface::onUIObjectActiveChanged);
+}
+
+void GameInterface::inject(sf::RenderWindow* window, Container* container, ObjectsContainer* objectsContainer)
 {
     m_window = window;
     m_container = container;
+    m_objectsContainer = objectsContainer;
 }
 
 void GameInterface::render() const
 {
-    for (auto uiObject : m_uiObjects)
+    for (auto uiObject : m_activeObjects)
     {
-        if (uiObject->isActive())
-        {
-            m_window->draw(*uiObject->getDrawable());
-        }
+        m_window->draw(*uiObject->getDrawable());
+    }
+}
+
+void GameInterface::onUIObjectActiveChanged(UIObject* object, bool isActive)
+{
+    if (isActive && !m_activeObjects.contains(object))
+    {
+        m_activeObjects.insert(object);
+    }
+
+    if (!isActive && m_activeObjects.contains(object))
+    {
+        m_activeObjects.erase(object);
     }
 }
