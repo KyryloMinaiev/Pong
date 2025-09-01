@@ -7,15 +7,13 @@ class Object
 public:
     virtual ~Object() = default;
 
-    void setActive(bool active);
-    void setParent(Object* parent);
     bool isActive() const;
-
     std::vector<Object*>& getChildren();
     
     std::string name;
 protected:
     virtual void onEnable();
+    virtual void onUpdate(float deltaTime);
     virtual void onDisable();
     
     bool m_active;
