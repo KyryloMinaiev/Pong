@@ -4,6 +4,7 @@
 #include "../../ITextureContainer.h"
 #include "../Text/ITextFactory.h"
 #include "../Text/Text.h"
+#include "../../Core/ObjectsModule/ObjectsContainer.h"
 
 ButtonFactory::~ButtonFactory() = default;
 

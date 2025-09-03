@@ -1,5 +1,6 @@
 ﻿#include "GameInterfaceModuleInstaller.h"
 
+#include "Navigation/NavigationService.h"
 #include "FontsProvider.h"
 #include "GameInterface.h"
 #include "../Core/DIContainer/Container.h"
@@ -9,6 +10,7 @@
 
 void GameInterfaceModuleInstaller::install(Container* container)
 {
+    container->bind<NavigationService>().registerType();
     container->bind<GameInterface>().registerType();
     container->bind<FontsProvider>().asType<IFontsProvider>().registerType();
     container->bind<TextFactory>().asType<ITextFactory>().registerType();

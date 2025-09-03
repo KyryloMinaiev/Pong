@@ -1,33 +1,40 @@
 ﻿#pragma once
+#include <set>
+#include <string>
 #include <SFML/Graphics/RenderWindow.hpp>
 
-
 #include "../Core/DIContainer/Container.h"
-#include "UIObject.h"
 #include "../Core/Delegates/Action.h"
+#include "UIObject.h"
+
+class NavigationService;
+class ObjectsContainer;
 
 class GameInterface
 {
 public:
     GameInterface();
     virtual ~GameInterface() = default;
-    void inject(sf::RenderWindow* window, Container* container, ObjectsContainer* objectsContainer);
+    void inject(sf::RenderWindow* window, Container* container, ObjectsContainer* objectsContainer,
+                NavigationService* navigationService);
     void render() const;
     template <typename TUIObject>
-    requires std::is_base_of_v<UIObject, TUIObject>
+        requires std::is_base_of_v<UIObject, TUIObject>
     TUIObject* createUIObjectOfType(const std::string& name = "UIObject");
+
 private:
     void onUIObjectActiveChanged(UIObject* object, bool isActive);
     Action<UIObject*, bool> m_objectActiveAction;
-    
+
     std::set<UIObject*> m_activeObjects;
     sf::RenderWindow* m_window;
     Container* m_container;
     ObjectsContainer* m_objectsContainer;
+    NavigationService* m_navigationService;
 };
 
 template <typename TUIObject>
-requires std::is_base_of_v<UIObject, TUIObject>
+    requires std::is_base_of_v<UIObject, TUIObject>
 TUIObject* GameInterface::createUIObjectOfType(const std::string& name)
 {
     TUIObject* ptr = m_container->instantiate<TUIObject>(name, false);
