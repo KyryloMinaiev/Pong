@@ -183,6 +183,9 @@
     <ClCompile Include="src\GameInterfaceModule\GameInterfaceModuleInstaller.cpp" />
     <ClCompile Include="src\GameInterfaceModule\Image\Image.cpp" />
     <ClCompile Include="src\GameInterfaceModule\Image\ImageFactory.cpp" />
+    <ClCompile Include="src\GameInterfaceModule\Navigation\NavigationElement.cpp" />
+    <ClCompile Include="src\GameInterfaceModule\Navigation\NavigationService.cpp" />
+    <ClCompile Include="src\GameInterfaceModule\Navigation\NavigationTree.cpp" />
     <ClCompile Include="src\GameInterfaceModule\Text\Text.cpp" />
     <ClCompile Include="src\GameInterfaceModule\Text\TextFactory.cpp" />
     <ClCompile Include="src\GameInterfaceModule\Text\TextSettings.cpp" />
@@ -222,6 +225,9 @@
     <ClInclude Include="src\GameInterfaceModule\Image\IImageFactory.h" />
     <ClInclude Include="src\GameInterfaceModule\Image\Image.h" />
     <ClInclude Include="src\GameInterfaceModule\Image\ImageFactory.h" />
+    <ClInclude Include="src\GameInterfaceModule\Navigation\NavigationElement.h" />
+    <ClInclude Include="src\GameInterfaceModule\Navigation\NavigationService.h" />
+    <ClInclude Include="src\GameInterfaceModule\Navigation\NavigationTree.h" />
     <ClInclude Include="src\GameInterfaceModule\Text\ITextFactory.h" />
     <ClInclude Include="src\GameInterfaceModule\Text\Text.h" />
     <ClInclude Include="src\GameInterfaceModule\Text\TextFactory.h" />

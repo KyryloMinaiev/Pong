@@ -1,16 +1,22 @@
 ﻿#pragma once
 #include <memory>
-#include <vector>
+#include <set>
 
 #include "Object.h"
+#include "../DIContainer/IUpdatable.h"
 
-class ObjectsContainer
+class ObjectsContainer : public IUpdatable
 {
 public:
     virtual ~ObjectsContainer() = default;
-
+    void update(float deltaTime) override;
     void addObject(const std::shared_ptr<Object>& object);
-    std::vector<std::shared_ptr<Object>>& getObjects();
+    void setObjectActive(Object* obj, bool active);
+    void setObjectParent(Object* parent, Object* child);
+    void destroyObject(Object* object);
 private:
-    std::vector<std::shared_ptr<Object>> m_objects;
+    void setObjectActiveInternal(Object* obj, bool active);
+    
+    std::set<std::shared_ptr<Object>> m_objects;
+    std::vector<Object*> m_activeObjects;
 };
