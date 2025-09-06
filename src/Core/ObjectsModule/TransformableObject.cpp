@@ -1,4 +1,6 @@
-﻿#include "TransformableObject.h"
+﻿#include "SFML/SFMLImport.h"
+
+module TransformableObject;
 
 TransformableObject::~TransformableObject() = default;
 

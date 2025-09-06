@@ -1,4 +1,4 @@
-#include "Object.h"
+﻿module Object;
 
 bool Object::isActive() const
 {

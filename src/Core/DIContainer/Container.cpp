@@ -1,4 +1,6 @@
-﻿#include "Container.h"
+﻿module Container;
+
+import <iostream>;
 
 Container::Container()
 {

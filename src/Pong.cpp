@@ -1,7 +1,5 @@
-
-#include <SFML\Graphics.hpp>
-
-#include "Game.h"
+﻿import Game;
+#include "SFML/SFMLImport.h"
 
 int WinMain()
 {

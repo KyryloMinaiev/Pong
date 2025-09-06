@@ -1,6 +1,5 @@
-﻿#include "ObjectFactory.h"
+﻿module ObjectFactory;
 
-void ObjectFactory::inject(ObjectsContainer* objectsContainer)
+ObjectFactory::ObjectFactory(ObjectsContainer* container) : m_objectsContainer(container)
 {
-    m_objectsContainer = objectsContainer;
 }

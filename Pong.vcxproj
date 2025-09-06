@@ -168,86 +168,164 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Core\ObjectsModule\Object.cpp" />
-    <ClCompile Include="src\Core\ObjectsModule\ObjectFactory.cpp" />
-    <ClCompile Include="src\Core\ObjectsModule\ObjectsContainer.cpp" />
-    <ClCompile Include="src\Core\ObjectsModule\ObjectsModuleInstaller.cpp" />
-    <ClCompile Include="src\Core\ObjectsModule\TransformableObject.cpp" />
-    <ClCompile Include="src\DebugModule\DebugModuleInstaller.cpp" />
-    <ClCompile Include="src\DebugModule\FPSCounter.cpp" />
-    <ClCompile Include="src\Game.cpp" />
-    <ClCompile Include="src\GameInterfaceModule\Button\Button.cpp" />
-    <ClCompile Include="src\GameInterfaceModule\Button\ButtonFactory.cpp" />
-    <ClCompile Include="src\GameInterfaceModule\FontsProvider.cpp" />
-    <ClCompile Include="src\GameInterfaceModule\GameInterface.cpp" />
-    <ClCompile Include="src\GameInterfaceModule\GameInterfaceModuleInstaller.cpp" />
-    <ClCompile Include="src\GameInterfaceModule\Image\Image.cpp" />
-    <ClCompile Include="src\GameInterfaceModule\Image\ImageFactory.cpp" />
-    <ClCompile Include="src\GameInterfaceModule\Navigation\NavigationElement.cpp" />
-    <ClCompile Include="src\GameInterfaceModule\Navigation\NavigationService.cpp" />
-    <ClCompile Include="src\GameInterfaceModule\Navigation\NavigationTree.cpp" />
-    <ClCompile Include="src\GameInterfaceModule\Text\Text.cpp" />
-    <ClCompile Include="src\GameInterfaceModule\Text\TextFactory.cpp" />
-    <ClCompile Include="src\GameInterfaceModule\Text\TextSettings.cpp" />
-    <ClCompile Include="src\GameInterfaceModule\UIObject.cpp" />
-    <ClCompile Include="src\GlobalInstaller.cpp" />
-    <ClCompile Include="src\InputModule\InputManager.cpp" />
-    <ClCompile Include="src\MainMenuModule\MainMenuModule.cpp" />
+    <ClCompile Include="external\include\SFML\SFMLImport.h">
+      <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <Optimization>Disabled</Optimization>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <AssemblerListingLocation>Pong\x64\Debug\</AssemblerListingLocation>
+      <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
+      <BrowseInformation>false</BrowseInformation>
+      <BrowseInformationFile>Pong\x64\Debug\</BrowseInformationFile>
+      <CompileAs>Default</CompileAs>
+      <UseDynamicDebugging>false</UseDynamicDebugging>
+      <ConformanceMode>true</ConformanceMode>
+      <DiagnosticsFormat>Column</DiagnosticsFormat>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <ExpandAttributedSource>false</ExpandAttributedSource>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <EnableASAN>false</EnableASAN>
+      <EnableFuzzer>false</EnableFuzzer>
+      <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <EnableVectorLength>NotSet</EnableVectorLength>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <GenerateModuleDependencies>false</GenerateModuleDependencies>
+      <GenerateSourceDependencies>false</GenerateSourceDependencies>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ModuleDependenciesFile>Pong\x64\Debug\</ModuleDependenciesFile>
+      <ModuleOutputFile>Pong\x64\Debug\</ModuleOutputFile>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ObjectFileName>Pong\x64\Debug\</ObjectFileName>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ProgramDataBaseFileName>Pong\x64\Debug\vc143.pdb</ProgramDataBaseFileName>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>Pong\x64\Debug\Pong.pch</PrecompiledHeaderOutputFile>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessKeepComments>false</PreprocessKeepComments>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+      <ShowIncludes>false</ShowIncludes>
+      <SourceDependenciesFile>Pong\x64\Debug\</SourceDependenciesFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <SpectreMitigation>false</SpectreMitigation>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <TrackerLogDirectory>Pong\x64\Debug\Pong.tlog\</TrackerLogDirectory>
+      <TranslateIncludes>false</TranslateIncludes>
+      <MinimalRebuildFromTracking>true</MinimalRebuildFromTracking>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <UseFullPaths>true</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <XMLDocumentationFileName>Pong\x64\Debug\</XMLDocumentationFileName>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <IntelJCCErratum>false</IntelJCCErratum>
+      <BuildStlModules>false</BuildStlModules>
+      <TreatAngleIncludeAsExternal>false</TreatAngleIncludeAsExternal>
+      <ExternalWarningLevel>InheritWarningLevel</ExternalWarningLevel>
+      <TreatExternalTemplatesAsInternal>true</TreatExternalTemplatesAsInternal>
+      <DisableAnalyzeExternal>false</DisableAnalyzeExternal>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\Projects\C++\Pong\external\include;</AdditionalIncludeDirectories>
+      <LinkCompiled>true</LinkCompiled>
+    </ClCompile>
+    <ClCompile Include="src\Core\DebugModule\DebugModule.ixx" />
+    <ClCompile Include="src\Core\DebugModule\DebugModuleInstaller.ixx" />
+    <ClCompile Include="src\Core\DebugModule\FPSCounter.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Button\Button.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Button\ButtonFactory.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Button\ButtonSettings.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Button\IButtonFactory.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\FontsProvider.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\GameInterface.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\GameInterfaceModule.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\GameInterfaceModuleInstaller.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\IFocusable.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\IFontsProvider.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\IInteractable.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Image\IImageFactory.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Image\Image.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Image\ImageFactory.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Navigation\NavigationElement.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Navigation\NavigationService.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Navigation\NavigationTree.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Text\ITextFactory.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Text\Text.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Text\TextFactory.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Text\TextSettings.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\UIObject.ixx" />
+    <ClCompile Include="src\Core\InputModule\IInputManager.ixx" />
+    <ClCompile Include="src\Core\InputModule\InputManager.ixx" />
+    <ClCompile Include="src\Core\RenderModule\IRenderable.ixx" />
+    <ClCompile Include="src\Core\ResourceLoadingModule\ITextureContainer.ixx" />
+    <ClCompile Include="src\Core\ResourceLoadingModule\TextureContainer.ixx" />
+    <ClCompile Include="src\Core\DebugModule\DebugModuleInstaller.cpp" />
+    <ClCompile Include="src\Core\DebugModule\FPSCounter.cpp" />
+    <ClCompile Include="src\Core\Delegates\Action.ixx" />
+    <ClCompile Include="src\Core\Delegates\Delegate.ixx" />
+    <ClCompile Include="src\Core\Delegates\Delegates.ixx" />
+    <ClCompile Include="src\Core\Delegates\Event.ixx" />
     <ClCompile Include="src\Core\DIContainer\Container.cpp" />
+    <ClCompile Include="src\Core\DIContainer\Container.ixx" />
+    <ClCompile Include="src\Core\DIContainer\ContainerType.ixx" />
+    <ClCompile Include="src\Core\DIContainer\DIContainer.ixx" />
+    <ClCompile Include="src\Core\DIContainer\IInitializable.ixx" />
+    <ClCompile Include="src\Core\DIContainer\IInstaller.ixx" />
+    <ClCompile Include="src\Core\DIContainer\IUpdatable.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Button\Button.cpp" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Button\ButtonFactory.cpp" />
+    <ClCompile Include="src\Core\GameInterfaceModule\FontsProvider.cpp" />
+    <ClCompile Include="src\Core\GameInterfaceModule\GameInterface.cpp" />
+    <ClCompile Include="src\Core\GameInterfaceModule\GameInterfaceModuleInstaller.cpp" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Image\Image.cpp" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Image\ImageFactory.cpp" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Navigation\NavigationElement.cpp" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Navigation\NavigationService.cpp" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Navigation\NavigationTree.cpp" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Text\Text.cpp" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Text\TextFactory.cpp" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Text\TextSettings.cpp" />
+    <ClCompile Include="src\Core\GameInterfaceModule\UIObject.cpp" />
+    <ClCompile Include="src\Core\InputModule\InputManager.cpp" />
+    <ClCompile Include="src\Core\InputModule\InputManegement.ixx" />
+    <ClCompile Include="src\Core\ObjectsModule\Object.cpp" />
+    <ClCompile Include="src\Core\ObjectsModule\Object.ixx" />
+    <ClCompile Include="src\Core\ObjectsModule\ObjectFactory.cpp" />
+    <ClCompile Include="src\Core\ObjectsModule\ObjectFactory.ixx" />
+    <ClCompile Include="src\Core\ObjectsModule\ObjectsContainer.cpp" />
+    <ClCompile Include="src\Core\ObjectsModule\ObjectsContainer.ixx" />
+    <ClCompile Include="src\Core\ObjectsModule\ObjectsModule.ixx" />
+    <ClCompile Include="src\Core\ObjectsModule\TransformableObject.cpp" />
+    <ClCompile Include="src\Core\ObjectsModule\TransformableObject.ixx" />
+    <ClCompile Include="src\Core\ResourceLoadingModule\ResourceManagement.ixx" />
+    <ClCompile Include="src\Core\ResourceLoadingModule\ResourceManagementInstaller.cpp" />
+    <ClCompile Include="src\Core\ResourceLoadingModule\ResourceManagementInstaller.ixx" />
+    <ClCompile Include="src\Core\ResourceLoadingModule\TextureContainer.cpp" />
+    <ClCompile Include="src\Core\WindowEvents\WindowEventHandler.cpp" />
+    <ClCompile Include="src\Core\WindowEvents\WindowEventHandler.ixx" />
+    <ClCompile Include="src\Core\WindowSequence\WindowSequenceService.cpp" />
+    <ClCompile Include="src\Core\WindowSequence\WindowSequenceService.ixx" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\Game.ixx" />
+    <ClCompile Include="src\GlobalInstaller.cpp" />
+    <ClCompile Include="src\GlobalInstaller.ixx" />
     <ClCompile Include="src\Pong.cpp" />
-    <ClCompile Include="src\TextureContainer.cpp" />
-    <ClCompile Include="src\WindowEvents\WindowEventHandler.cpp" />
-    <ClCompile Include="src\WindowSequenceService.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\Core\Delegates\Action.h" />
-    <ClInclude Include="src\Core\Delegates\Delegate.h" />
-    <ClInclude Include="src\Core\Delegates\Event.h" />
-    <ClInclude Include="src\Core\DIContainer\IInstaller.h" />
-    <ClInclude Include="src\Core\ObjectsModule\Object.h" />
-    <ClInclude Include="src\Core\ObjectsModule\ObjectFactory.h" />
-    <ClInclude Include="src\Core\ObjectsModule\ObjectsContainer.h" />
-    <ClInclude Include="src\Core\ObjectsModule\ObjectsModuleInstaller.h" />
-    <ClInclude Include="src\Core\ObjectsModule\TransformableObject.h" />
-    <ClInclude Include="src\DebugModule\DebugModuleInstaller.h" />
-    <ClInclude Include="src\DebugModule\FPSCounter.h" />
-    <ClInclude Include="src\Game.h" />
-    <ClInclude Include="src\GameInterfaceModule\Button\Button.h" />
-    <ClInclude Include="src\GameInterfaceModule\Button\ButtonFactory.h" />
-    <ClInclude Include="src\GameInterfaceModule\Button\ButtonSettings.h" />
-    <ClInclude Include="src\GameInterfaceModule\Button\IButtonFactory.h" />
-    <ClInclude Include="src\GameInterfaceModule\FontsProvider.h" />
-    <ClInclude Include="src\GameInterfaceModule\GameInterface.h" />
-    <ClInclude Include="src\GameInterfaceModule\GameInterfaceModuleInstaller.h" />
-    <ClInclude Include="src\GameInterfaceModule\IFocusable.h" />
-    <ClInclude Include="src\GameInterfaceModule\IFontsProvider.h" />
-    <ClInclude Include="src\GameInterfaceModule\IInteractable.h" />
-    <ClInclude Include="src\GameInterfaceModule\Image\IImageFactory.h" />
-    <ClInclude Include="src\GameInterfaceModule\Image\Image.h" />
-    <ClInclude Include="src\GameInterfaceModule\Image\ImageFactory.h" />
-    <ClInclude Include="src\GameInterfaceModule\Navigation\NavigationElement.h" />
-    <ClInclude Include="src\GameInterfaceModule\Navigation\NavigationService.h" />
-    <ClInclude Include="src\GameInterfaceModule\Navigation\NavigationTree.h" />
-    <ClInclude Include="src\GameInterfaceModule\Text\ITextFactory.h" />
-    <ClInclude Include="src\GameInterfaceModule\Text\Text.h" />
-    <ClInclude Include="src\GameInterfaceModule\Text\TextFactory.h" />
-    <ClInclude Include="src\GameInterfaceModule\Text\TextSettings.h" />
-    <ClInclude Include="src\GameInterfaceModule\UIObject.h" />
-    <ClInclude Include="src\GlobalInstaller.h" />
-    <ClInclude Include="src\InputModule\IInputManager.h" />
-    <ClInclude Include="src\InputModule\InputManager.h" />
-    <ClInclude Include="src\ITextureContainer.h" />
-    <ClInclude Include="src\MainMenuModule\MainMenuModule.h" />
-    <ClInclude Include="src\Core\DIContainer\Container.h" />
-    <ClInclude Include="src\Core\DIContainer\IInitializable.h" />
-    <ClInclude Include="src\Core\DIContainer\IUpdatable.h" />
-    <ClInclude Include="src\RenderModule\IRenderable.h" />
-    <ClInclude Include="src\TextureContainer.h" />
-    <ClInclude Include="src\WindowEvents\WindowEventHandler.h" />
-    <ClInclude Include="src\WindowSequenceService.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\EnterNameScreenModule\" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

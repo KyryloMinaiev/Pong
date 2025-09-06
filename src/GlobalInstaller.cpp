@@ -1,21 +1,18 @@
-﻿#include "GlobalInstaller.h"
+﻿module GlobalInstaller;
 
-#include "TextureContainer.h"
-#include "WindowSequenceService.h"
-#include "Core/DIContainer/Container.h"
-#include "Core/ObjectsModule/ObjectsModuleInstaller.h"
-#include "DebugModule/DebugModuleInstaller.h"
-#include "GameInterfaceModule/GameInterfaceModuleInstaller.h"
-#include "InputModule/InputManager.h"
-#include "WindowEvents/WindowEventHandler.h"
+import WindowEventHandler;
+import WindowSequenceService;
+import ResourceManagement;
+import DebugModule;
+import InputManagement;
+import GameInterfaceModule;
 
 void GlobalInstaller::install(Container* container)
 {
-    container->bind<TextureContainer>().asType<ITextureContainer>().registerType();
+    container->install<ResourceManagementInstaller>();
     container->bind<WindowEventHandler>().registerType();
     container->bind<WindowSequenceService>().registerType();
     container->bind<InputManager>().asType<IInputManager>().registerType();
-    container->install<ObjectsModuleInstaller>();
     container->install<GameInterfaceModuleInstaller>();
 
     container->install<DebugModuleInstaller>();

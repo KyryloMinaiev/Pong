@@ -1,6 +1,6 @@
-﻿#include "ObjectsContainer.h"
+﻿module ObjectsContainer;
 
-void ObjectsContainer::update(float deltaTime)
+void ObjectsContainer::update(float deltaTime) const
 {
     for (auto& object : m_objects)
     {
