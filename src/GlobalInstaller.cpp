@@ -6,6 +6,7 @@ import ResourceManagement;
 import DebugModule;
 import InputManagement;
 import GameInterfaceModule;
+import StateMachineModule;
 
 void GlobalInstaller::install(Container* container)
 {
@@ -14,6 +15,7 @@ void GlobalInstaller::install(Container* container)
     container->bind<WindowSequenceService>().registerType();
     container->bind<InputManager>().asType<IInputManager>().registerType();
     container->install<GameInterfaceModuleInstaller>();
+    container->install<StateMachineModuleInstaller>();
 
     container->install<DebugModuleInstaller>();
 }
