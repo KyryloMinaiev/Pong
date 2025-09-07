@@ -4,18 +4,20 @@ import DIContainer;
 import ApplicationState;
 import <typeindex>;
 import <unordered_map>;
+import <iostream>;
 
 export class ApplicationStateMachine
 {
 public:
     virtual ~ApplicationStateMachine() = default;
     void inject(Container* container);
-    template<class TState>
-    requires std::is_base_of_v<ApplicationState, TState>
+    template <class TState>
+        requires std::is_base_of_v<ApplicationState, TState>
     void enterState();
+
 private:
-    template<class TState>
-    requires std::is_base_of_v<ApplicationState, TState>
+    template <class TState>
+        requires std::is_base_of_v<ApplicationState, TState>
     ApplicationState* tryGetApplicationState();
 
     Container* m_container;
@@ -31,11 +33,16 @@ void ApplicationStateMachine::enterState()
         m_currentState->exitState();
         m_currentState = nullptr;
     }
-    
+
     if (auto state = tryGetApplicationState<TState>())
     {
+        std::cout << "Entered " << typeid(TState).name() << " state!" << '\n';
         m_currentState = state;
         m_currentState->enterState();
+    }
+    else
+    {
+        std::cout << "State " << typeid(TState).name() << " was not found!" << '\n';
     }
 }
 

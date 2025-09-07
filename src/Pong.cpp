@@ -1,13 +1,15 @@
-﻿import Game;
-#include "SFML/SFMLImport.h"
+﻿#include "SFML/SFMLImport.h"
+import Game;
 
-int WinMain()
+int main()
 {
     sf::VideoMode videoMode = sf::VideoMode(sf::Vector2u(1080, 720));
     sf::RenderWindow window(videoMode, "Pong", sf::Style::Titlebar | sf::Style::Close, sf::State::Windowed);
     window.setFramerateLimit(60);
     std::unique_ptr<Game> game = std::make_unique<Game>(&window);
     sf::Clock clock;
+
+    game->start();
     while (window.isOpen())
     {
         window.clear();

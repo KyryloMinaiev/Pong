@@ -1,6 +1,10 @@
-﻿module Game;
+﻿#include "SFML/SFMLImport.h"
+
+module Game;
 
 import GlobalInstaller;
+import StateMachineModule;
+import BootState;
 
 Game::Game(sf::RenderWindow* window) : m_window(window), m_objectsContainer(std::make_unique<ObjectsContainer>()),
                                        m_objectFactory(std::make_unique<ObjectFactory>(m_objectsContainer.get())), 
@@ -16,6 +20,11 @@ Game::Game(sf::RenderWindow* window) : m_window(window), m_objectsContainer(std:
 }
 
 Game::~Game() = default;
+
+void Game::start() const
+{
+	m_container->resolve<ApplicationStateMachine>()->enterState<BootState>();
+}
 
 void Game::update(float deltaTime)
 {

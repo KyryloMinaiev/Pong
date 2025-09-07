@@ -7,6 +7,8 @@ import DebugModule;
 import InputManagement;
 import GameInterfaceModule;
 import StateMachineModule;
+import EnterNameModuleInstaller;
+import BootState;
 
 void GlobalInstaller::install(Container* container)
 {
@@ -16,8 +18,12 @@ void GlobalInstaller::install(Container* container)
     container->bind<InputManager>().asType<IInputManager>().registerType();
     container->install<GameInterfaceModuleInstaller>();
     container->install<StateMachineModuleInstaller>();
-
+    
+    container->install<EnterNameModuleInstaller>();
+    
     container->install<DebugModuleInstaller>();
+
+    container->bind<BootState>().registerType();
 }
 
 GlobalInstaller::~GlobalInstaller() = default;

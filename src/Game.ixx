@@ -12,7 +12,8 @@ export class Game
 public:
     explicit Game(sf::RenderWindow* window);
     ~Game();
-    
+
+    void start() const;
     void update(float deltaTime);
 
 private:

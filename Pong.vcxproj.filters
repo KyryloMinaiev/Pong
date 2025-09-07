@@ -124,81 +124,60 @@
     <ClCompile Include="src\Core\InputModule\InputManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\Core\DebugModule\DebugModuleInstaller.h">
+    <ClCompile Include="external\include\SFML\SFMLImport.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\DebugModule\FPSCounter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\FontsProvider.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\GameInterface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\GameInterfaceModuleInstaller.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\IFocusable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\IFontsProvider.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\IInteractable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\UIObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\ResourceLoadingModule\ITextureContainer.ixx" />
-    <ClInclude Include="src\Core\ResourceLoadingModule\TextureContainer.ixx" />
-    <ClInclude Include="src\Core\GameInterfaceModule\Button\Button.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\Button\ButtonFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\Button\ButtonSettings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\Button\IButtonFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\Image\IImageFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\Image\Image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\Image\ImageFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\Navigation\NavigationElement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\Navigation\NavigationService.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\Navigation\NavigationTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\Text\ITextFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\Text\Text.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\Text\TextFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\GameInterfaceModule\Text\TextSettings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core\RenderModule\IRenderable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    </ClCompile>
+    <ClCompile Include="src\BootState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BootState.ixx" />
+    <ClCompile Include="src\Core\DebugModule\DebugModule.ixx" />
+    <ClCompile Include="src\Core\DebugModule\DebugModuleInstaller.ixx" />
+    <ClCompile Include="src\Core\DebugModule\FPSCounter.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Button\Button.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Button\ButtonFactory.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Button\ButtonSettings.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Button\IButtonFactory.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\FontsProvider.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\GameInterface.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\GameInterfaceModule.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\GameInterfaceModuleInstaller.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\IFocusable.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\IFontsProvider.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\IInteractable.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Image\IImageFactory.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Image\Image.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Image\ImageFactory.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Navigation\NavigationElement.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Navigation\NavigationService.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Navigation\NavigationTree.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Text\ITextFactory.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Text\Text.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Text\TextFactory.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\Text\TextSettings.ixx" />
+    <ClCompile Include="src\Core\GameInterfaceModule\UIObject.ixx" />
+    <ClCompile Include="src\Core\InputModule\IInputManager.ixx" />
+    <ClCompile Include="src\Core\InputModule\InputManager.ixx" />
+    <ClCompile Include="src\Core\RenderModule\IRenderable.ixx" />
+    <ClCompile Include="src\Core\ResourceLoadingModule\ITextureContainer.ixx" />
+    <ClCompile Include="src\Core\ResourceLoadingModule\TextureContainer.ixx" />
+    <ClCompile Include="src\Core\StateMachine\ApplicationState.ixx" />
+    <ClCompile Include="src\Core\StateMachine\ApplicationStateMachine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\StateMachine\ApplicationStateMachine.ixx" />
+    <ClCompile Include="src\Core\StateMachine\StateMachineModule.ixx" />
+    <ClCompile Include="src\Core\StateMachine\StateMachineModuleInstaller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\StateMachine\StateMachineModuleInstaller.ixx" />
+    <ClCompile Include="src\Features\EnterNameModule\EnterNameModuleInstaller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Features\EnterNameModule\EnterNameModuleInstaller.ixx" />
+    <ClCompile Include="src\Features\EnterNameModule\EnterNameState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Features\EnterNameModule\EnterNameState.ixx" />
   </ItemGroup>
 </Project>

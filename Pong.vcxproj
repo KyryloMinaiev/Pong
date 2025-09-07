@@ -97,7 +97,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>D:\Projects\C++\Pong\external\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-network-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -115,7 +115,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>D:\Projects\C++\Pong\external\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-network-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -136,7 +136,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -159,7 +159,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -245,6 +245,8 @@
       <AdditionalIncludeDirectories>D:\Projects\C++\Pong\external\include;</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="src\BootState.cpp" />
+    <ClCompile Include="src\BootState.ixx" />
     <ClCompile Include="src\Core\DebugModule\DebugModule.ixx" />
     <ClCompile Include="src\Core\DebugModule\DebugModuleInstaller.ixx" />
     <ClCompile Include="src\Core\DebugModule\FPSCounter.ixx" />
@@ -327,6 +329,10 @@
     <ClCompile Include="src\Core\WindowEvents\WindowEventHandler.ixx" />
     <ClCompile Include="src\Core\WindowSequence\WindowSequenceService.cpp" />
     <ClCompile Include="src\Core\WindowSequence\WindowSequenceService.ixx" />
+    <ClCompile Include="src\Features\EnterNameModule\EnterNameModuleInstaller.cpp" />
+    <ClCompile Include="src\Features\EnterNameModule\EnterNameModuleInstaller.ixx" />
+    <ClCompile Include="src\Features\EnterNameModule\EnterNameState.cpp" />
+    <ClCompile Include="src\Features\EnterNameModule\EnterNameState.ixx" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Game.ixx" />
     <ClCompile Include="src\GlobalInstaller.cpp" />
